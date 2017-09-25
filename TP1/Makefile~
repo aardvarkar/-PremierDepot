@@ -1,0 +1,8 @@
+sources = gui_simple.cpp
+objets = $(sources : .cpp=.o)
+
+GUISimple : gui_simple.o
+	g++ $^ -o $@ -l QtGui -l QtCore
+
+gui_simple.o : gui_simple.cpp
+	g++  -c $^ -o $@ -I /usr/include/qt4/QtGui -I /usr/include/qt4/ -I /usr/include/qt4/QtCore
